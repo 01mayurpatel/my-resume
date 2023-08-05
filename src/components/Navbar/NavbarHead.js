@@ -10,7 +10,7 @@ function NavbarHead() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/Main" style={{ color: "rgb(148, 69, 222)", fontSize: "28px" }}>My-Resume</Navbar.Brand>
+        <Navbar.Brand href="/main" style={{ color: "rgb(148, 69, 222)", fontSize: "28px" }}>My-Resume</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav ">
           <Nav className="ms-auto nav-main"> {/* Use ms-auto class here */}
