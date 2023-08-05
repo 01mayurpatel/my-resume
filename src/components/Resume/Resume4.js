@@ -1,8 +1,8 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState,useCallback, } from "react";
 import {
     AtSign,
     Calendar,
-    Columns,
+    // Columns,
     GitHub,
     Linkedin,
     MapPin,
@@ -254,43 +254,43 @@ const Resume2 = forwardRef((props, ref) => {
         ),
     };
 
-    const swapSourceTarget = (source, target) => {
+    const swapSourceTarget = useCallback((source, target) => {
         if (!source || !target) return;
         const tempColumns = [[...columns[0]], [...columns[1]]];
-
+    
         let sourceRowIndex = tempColumns[0].findIndex((item) => item === source);
         let sourceColumnIndex = 0;
         if (sourceRowIndex < 0) {
-            sourceColumnIndex = 1;
-            sourceRowIndex = tempColumns[1].findIndex((item) => item === source);
+          sourceColumnIndex = 1;
+          sourceRowIndex = tempColumns[1].findIndex((item) => item === source);
         }
-
+    
         let targetRowIndex = tempColumns[0].findIndex((item) => item === target);
         let targetColumnIndex = 0;
         if (targetRowIndex < 0) {
-            targetColumnIndex = 1;
-            targetRowIndex = tempColumns[1].findIndex((item) => item === target);
+          targetColumnIndex = 1;
+          targetRowIndex = tempColumns[1].findIndex((item) => item === target);
         }
-
+    
         const tempSource = tempColumns[sourceColumnIndex][sourceRowIndex];
         tempColumns[sourceColumnIndex][sourceRowIndex] =
-            tempColumns[targetColumnIndex][targetRowIndex];
-
+          tempColumns[targetColumnIndex][targetRowIndex];
+    
         tempColumns[targetColumnIndex][targetRowIndex] = tempSource;
-
+    
         setColumns(tempColumns);
-    };
+      }, [columns]);
 
     useEffect(() => {
         setColumns([
             [sections.project, sections.education, sections.summary],
             [sections.workExp, sections.achievement, sections.other],
         ]);
-    }, []);
+    }, [sections.achievement, sections.education, sections.other, sections.project, sections.summary, sections.workExp]);
 
     useEffect(() => {
         swapSourceTarget(source, target);
-    }, [source]);
+      }, [swapSourceTarget, target, source]);
 
     useEffect(() => {
         const container = containerRef.current;
@@ -320,30 +320,30 @@ const Resume2 = forwardRef((props, ref) => {
 
                         <div className={styles.links}>
                             {info.basicInfo?.detail?.email ? (
-                                <a className={styles.link} type="email">
-                                    <AtSign /> {info.basicInfo?.detail?.email}
-                                </a>
+                                <p className={styles.link} type="email">
+                                <AtSign /> {info.basicInfo?.detail?.email}
+                            </p>
                             ) : (
                                 <span />
                             )}
                             {info.basicInfo?.detail?.phone ? (
-                                <a className={styles.link}>
+                                <p className={styles.link} href="">
                                     <Phone /> {info.basicInfo?.detail?.phone}
-                                </a>
+                                </p>
                             ) : (
                                 <span />
                             )}
                             {info.basicInfo?.detail?.linkedin ? (
-                                <a className={styles.link}>
+                                <p className={styles.link} href="">
                                     <Linkedin /> {info.basicInfo?.detail?.linkedin}
-                                </a>
+                                </p>
                             ) : (
                                 <span />
                             )}
                             {info.basicInfo?.detail?.github ? (
-                                <a className={styles.link}>
+                                <p className={styles.link} href="">
                                     <GitHub /> {info.basicInfo?.detail?.github}
-                                </a>
+                                </p>
                             ) : (
                                 <span />
                             )}

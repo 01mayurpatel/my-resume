@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { X } from "react-feather";
-import {Link , animateScroll} from "react-scroll";
+import {Link } from "react-scroll";
 import InputControl from "../InputControl/InputControl";
 
 import styles from "./Editor.module.css";

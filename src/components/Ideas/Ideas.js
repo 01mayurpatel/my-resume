@@ -2,9 +2,9 @@ import React from 'react'
 import NavbarHead from "../Navbar/NavbarHead";
 import Footer from "../Footer/Footer"
 import Videos from '../Videos/Videos';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Col'
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Container from 'react-bootstrap/Col'
 import Review from '../Review/Review';
 import './Ideas.css'
 function Ideas() {

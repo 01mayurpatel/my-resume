@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
-import { ArrowDown } from "react-feather";
-import { Link, animateScroll } from "react-scroll";
+// import { ArrowDown } from "react-feather";
+import { Link} from "react-scroll";
 import Editor from "../Editor/Editor";
 import Resume from "../Resume/Resume";
 import Resume2 from "../Resume/Resume2";

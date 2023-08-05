@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useRef, useState } from "react";
 import {
     AtSign,
     Calendar,
-    Columns,
+    // Columns,
     GitHub,
     Linkedin,
     MapPin,

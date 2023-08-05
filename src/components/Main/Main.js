@@ -4,11 +4,11 @@ import { faAnglesUp, faCashRegister, faChartSimple, faDownload, faFile, faFire, 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 import Navbars from '../Navbar/NavbarHead';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import lines from "../../lines.svg"
+// import lines from "../../lines.svg"
 import Footer from "../Footer/Footer"
 import './Main.css';
 function Main() {
