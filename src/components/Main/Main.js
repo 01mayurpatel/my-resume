@@ -49,7 +49,7 @@ function Main() {
           </div>
           </Col>
           <Col lg="6" md="6" xm="12" className='top-right'>
-          <img className='pic-right ' src={pic}/>
+          <img className='pic-right ' src={pic} alt=""/>
 
           </Col>
         </Row>

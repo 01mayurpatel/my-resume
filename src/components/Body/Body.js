@@ -128,7 +128,7 @@ function Body() {
                               }}
                             >
 
-                              <img style={{ width: "100%", height: "auto" }} src={First} />
+                              <img style={{ width: "100%", height: "auto" }} src={First} alt=""/>
                             </div>
                           </Col>
 
@@ -142,7 +142,7 @@ function Body() {
                             >
 
 
-                              <img style={{ width: "100%", height: "auto" }} src={Second} />
+                              <img style={{ width: "100%", height: "auto" }} src={Second} alt=""/>
 
                             </div>
                           </Col>
@@ -154,7 +154,7 @@ function Body() {
 
 
                               }}>
-                              <img style={{ width: "100%", height: "auto" }} src={Third} />
+                              <img style={{ width: "100%", height: "auto" }} src={Third} alt=""/>
                             </div>
                           </Col>
                           <Col lg="3" md="6" xs="6" style={{ marginBottom: "18px" }}>
@@ -166,7 +166,7 @@ function Body() {
 
                               }}>
 
-                              <img style={{ width: "100%", height: "auto" }} src={Fourth} />
+                              <img style={{ width: "100%", height: "auto" }} src={Fourth} alt=""/>
                             </div>
                           </Col>
                         </Row>
