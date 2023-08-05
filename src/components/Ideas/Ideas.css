@@ -1,0 +1,16 @@
+.start{
+    color: rgb(148, 69, 222);
+    font-size: 35px;
+}
+.start2{
+    color: rgb(148, 69, 222);
+    font-size: 30px;
+}
+@media screen and (max-width: 440px) {
+    .start{
+        font-size: 25px;
+    }
+    .start2{
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=REM:wght@300&display=swap');
+*{
+    font-family: 'Bungee', cursive;
+    font-family: 'REM', sans-serif;
+   
+}
+.nav-l{
+    text-decoration: none;
+    color: black;
+}
+.nav-l:hover{
+    color: rgb(148, 69, 222);
+}
+.nav-l p{
+    font-size: 19px;
+}
+.nav-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
