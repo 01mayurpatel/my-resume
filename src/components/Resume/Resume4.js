@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef, useState,useCallback, } from "react";
+import React, { forwardRef, useEffect, useRef, useState,useCallback } from "react";
 import {
     AtSign,
     Calendar,
@@ -280,24 +280,24 @@ const Resume2 = forwardRef((props, ref) => {
     
         setColumns(tempColumns);
       }, [columns]);
-
-    useEffect(() => {
+    
+      useEffect(() => {
         setColumns([
-            [sections.project, sections.education, sections.summary],
-            [sections.workExp, sections.achievement, sections.other],
+          [sections.project, sections.education, sections.summary],
+          [sections.workExp, sections.achievement, sections.other],
         ]);
-    }, [sections.achievement, sections.education, sections.other, sections.project, sections.summary, sections.workExp]);
-
-    useEffect(() => {
+      }, [sections.achievement, sections.education, sections.other, sections.project, sections.summary, sections.workExp]);
+    
+      useEffect(() => {
         swapSourceTarget(source, target);
-      }, [swapSourceTarget, target, source]);
-
-    useEffect(() => {
+      }, [source, target, swapSourceTarget]);
+    
+      useEffect(() => {
         const container = containerRef.current;
         if (!props.activeColor || !container) return;
-
+    
         container.style.setProperty("--color", props.activeColor);
-    }, [props.activeColor]);
+      }, [props.activeColor]);
 
     return (
         <div ref={ref}>

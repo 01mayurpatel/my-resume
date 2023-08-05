@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState,useCallback } from "react";
 import {
     AtSign,
     Calendar,
@@ -254,50 +254,50 @@ const Resume2 = forwardRef((props, ref) => {
         ),
     };
 
-    const swapSourceTarget = (source, target) => {
+    const swapSourceTarget = useCallback((source, target) => {
         if (!source || !target) return;
         const tempColumns = [[...columns[0]], [...columns[1]]];
-
+    
         let sourceRowIndex = tempColumns[0].findIndex((item) => item === source);
         let sourceColumnIndex = 0;
         if (sourceRowIndex < 0) {
-            sourceColumnIndex = 1;
-            sourceRowIndex = tempColumns[1].findIndex((item) => item === source);
+          sourceColumnIndex = 1;
+          sourceRowIndex = tempColumns[1].findIndex((item) => item === source);
         }
-
+    
         let targetRowIndex = tempColumns[0].findIndex((item) => item === target);
         let targetColumnIndex = 0;
         if (targetRowIndex < 0) {
-            targetColumnIndex = 1;
-            targetRowIndex = tempColumns[1].findIndex((item) => item === target);
+          targetColumnIndex = 1;
+          targetRowIndex = tempColumns[1].findIndex((item) => item === target);
         }
-
+    
         const tempSource = tempColumns[sourceColumnIndex][sourceRowIndex];
         tempColumns[sourceColumnIndex][sourceRowIndex] =
-            tempColumns[targetColumnIndex][targetRowIndex];
-
+          tempColumns[targetColumnIndex][targetRowIndex];
+    
         tempColumns[targetColumnIndex][targetRowIndex] = tempSource;
-
+    
         setColumns(tempColumns);
-    };
-
-    useEffect(() => {
+      }, [columns]);
+    
+      useEffect(() => {
         setColumns([
-            [sections.project, sections.education, sections.summary],
-            [sections.workExp, sections.achievement, sections.other],
+          [sections.project, sections.education, sections.summary],
+          [sections.workExp, sections.achievement, sections.other],
         ]);
-    }, []);
-
-    useEffect(() => {
+      }, [sections.achievement, sections.education, sections.other, sections.project, sections.summary, sections.workExp]);
+    
+      useEffect(() => {
         swapSourceTarget(source, target);
-    }, [source]);
-
-    useEffect(() => {
+      }, [source, target, swapSourceTarget]);
+    
+      useEffect(() => {
         const container = containerRef.current;
         if (!props.activeColor || !container) return;
-
+    
         container.style.setProperty("--color", props.activeColor);
-    }, [props.activeColor]);
+      }, [props.activeColor]);
 
     return (
         <div ref={ref}>
