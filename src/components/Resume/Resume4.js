@@ -121,18 +121,18 @@ const Resume2 = forwardRef((props, ref) => {
                                 <span />
                             )}
                             {item.link ? (
-                                <a className={styles.link} href={item.link}>
+                                <p className={styles.link} href={item.link}>
                                     <Paperclip />
                                     {item.link}
-                                </a>
+                                </p>
                             ) : (
                                 <span />
                             )}
                             {item.github ? (
-                                <a className={styles.link} href={item.github}>
+                                <p className={styles.link} href={item.github}>
                                     <GitHub />
                                     {item.github}
-                                </a>
+                                </p>
                             ) : (
                                 <span />
                             )}

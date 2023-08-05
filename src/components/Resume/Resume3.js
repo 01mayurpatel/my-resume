@@ -309,30 +309,30 @@ const Resume2 = forwardRef((props, ref) => {
 
                         <div className={styles.links}>
                             {info.basicInfo?.detail?.email ? (
-                                <a className={styles.link} type="email">
+                                <p className={styles.link} type="email">
                                     <AtSign /> {info.basicInfo?.detail?.email}
-                                </a>
+                                </p>
                             ) : (
                                 <span />
                             )}
                             {info.basicInfo?.detail?.phone ? (
-                                <a className={styles.link}>
+                                <p className={styles.link}>
                                     <Phone /> {info.basicInfo?.detail?.phone}
-                                </a>
+                                </p>
                             ) : (
                                 <span />
                             )}
                             {info.basicInfo?.detail?.linkedin ? (
-                                <a className={styles.link}>
+                                <p className={styles.link}>
                                     <Linkedin /> {info.basicInfo?.detail?.linkedin}
-                                </a>
+                                </p>
                             ) : (
                                 <span />
                             )}
                             {info.basicInfo?.detail?.github ? (
-                                <a className={styles.link}>
+                                <p className={styles.link}>
                                     <GitHub /> {info.basicInfo?.detail?.github}
-                                </a>
+                                </p>
                             ) : (
                                 <span />
                             )}
