@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 // import lines from "../../lines.svg"
 import Footer from "../Footer/Footer"
+import { useEffect } from 'react';
 import './Main.css';
 function Main() {
   return (
